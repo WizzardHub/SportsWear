@@ -1,6 +1,8 @@
 package me.khalil.app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.wizzard.app.AddArticle;
+import me.wizzard.app.EditArticle;
 import me.wizzard.app.R;
 import me.wizzard.module.Article;
 
@@ -40,5 +44,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void onLoad() {
         // a faire quand on click sur un bouton
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddArticle.class);
+                startActivity(intent);
+            }
+        });
+
+        btnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListArticle.class);
+                startActivity(intent);
+            }
+        });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditArticle.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

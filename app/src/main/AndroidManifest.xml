@@ -20,6 +20,7 @@
         </activity>
 
         <activity android:name=".AddArticle" />
+        <activity android:name="me.khalil.app.ListArticle" />
         <activity android:name=".EditArticle" />
     </application>
 
