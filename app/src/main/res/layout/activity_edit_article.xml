@@ -87,17 +87,30 @@
         app:layout_constraintTop_toTopOf="@+id/editTextPrixModif" />
 
     <Button
-        android:id="@+id/buttonRetourModif"
+        android:id="@+id/buttonModifModif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:width="1000sp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/message_modif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQteModif" />
+
+    <Button
+        android:id="@+id/buttonRetourModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:width="1000sp"
         android:backgroundTint="@color/purple_200"
         android:text="@string/button_retour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQteModif" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonModifModif" />
 
     <EditText
         android:id="@+id/editTextQteModif"
