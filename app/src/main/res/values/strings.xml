@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- main activity -->
+    <string name="message_accueil">Sports Wear</string>
+
+    <!-- add article -->
+    <string name="message_ajout">Ajouter un article</string>
+    <string name="button_ajout_article">Ajouter l\'Article</string>
+
+    <!-- edit article -->
+    <string name="message_modif">Modifier un article</string>
+
+    <!-- list article -->
+    <string name="message_liste">Liste des articles</string>
+
+    <!-- base -->
+    <string name="app_name">SportsWearApp</string>
+    <string name="label_nom_article">Nom : </string>
+    <string name="label_description_article">Description : </string>
+    <string name="label_prix_article">Prix : </string>
+    <string name="label_qte_article">Quantité</string>
+    <string name="text_nom_article">Nom article</string>
+    <string name="text_description_article">Description Article</string>
+    <string name="text_prix_article">Prix Article</string>
+    <string name="text_qte_article">Quantité Article</string>
+    <string name="button_retour">Retour</string>
+
+</resources>

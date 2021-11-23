@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddArticle">
+
+    <TextView
+        android:id="@+id/textViewMessageAjoutArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/message_ajout"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDescAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_description_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextDescAjout"
+        app:layout_constraintTop_toTopOf="@+id/editTextDescAjout" />
+
+    <TextView
+        android:id="@+id/textViewNomAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_nom_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNomAjout"
+        app:layout_constraintTop_toTopOf="@+id/editTextNomAjout" />
+
+    <TextView
+        android:id="@+id/textViewQteAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_qte_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextQteAjout"
+        app:layout_constraintTop_toTopOf="@+id/editTextQteAjout" />
+
+    <TextView
+        android:id="@+id/textViewPrixAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_prix_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPrixAjout"
+        app:layout_constraintTop_toTopOf="@+id/editTextPrixAjout" />
+
+    <EditText
+        android:id="@+id/editTextNomAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/text_nom_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMessageAjoutArticle" />
+
+    <EditText
+        android:id="@+id/editTextDescAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_description_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNomAjout"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomAjout" />
+
+    <EditText
+        android:id="@+id/editTextPrixAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_prix_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescAjout"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescAjout" />
+
+    <EditText
+        android:id="@+id/editTextQteAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_qte_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPrixAjout"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrixAjout" />
+
+    <Button
+        android:id="@+id/buttonAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:width="1000sp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/button_ajout_article"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQteAjout" />
+
+    <Button
+        android:id="@+id/buttonRetourArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:width="1000sp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/button_retour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAjouter" />
+</androidx.constraintlayout.widget.ConstraintLayout>

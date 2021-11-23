@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textViewNomModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_nom_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNomModif"
+        app:layout_constraintTop_toTopOf="@+id/editTextNomModif" />
+
+    <TextView
+        android:id="@+id/textViewDescModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_description_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextDescModif"
+        app:layout_constraintTop_toTopOf="@+id/editTextDescModif" />
+
+    <TextView
+        android:id="@+id/textViewMessageModifArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/message_modif"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNomModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="@string/text_nom_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMessageModifArticle" />
+
+    <EditText
+        android:id="@+id/editTextPrixModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_prix_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescModif"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescModif" />
+
+    <EditText
+        android:id="@+id/editTextDescModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_description_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNomModif"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomModif" />
+
+    <TextView
+        android:id="@+id/textViewPrixModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_prix_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPrixModif"
+        app:layout_constraintTop_toTopOf="@+id/editTextPrixModif" />
+
+    <Button
+        android:id="@+id/buttonRetourModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:width="1000sp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/button_retour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQteModif" />
+
+    <EditText
+        android:id="@+id/editTextQteModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/text_qte_article"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPrixModif"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrixModif" />
+
+    <TextView
+        android:id="@+id/textViewQteModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/label_qte_article"
+        app:layout_constraintEnd_toStartOf="@+id/editTextQteModif"
+        app:layout_constraintTop_toTopOf="@+id/editTextQteModif" />
+</androidx.constraintlayout.widget.ConstraintLayout>
