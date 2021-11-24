@@ -2,6 +2,7 @@ package me.khalil.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,7 +18,7 @@ import me.wizzard.module.Article;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Article> articles;
+    ArrayList<Article> articles;
     Button btnAdd, btnList, btnEdit;
 
     @Override
@@ -27,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
         this.onInit();
         this.onLoad();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if (getIntent().getExtras() == null)
+            return;
+
+        articles = getIntent().getParcelableArrayListExtra("articles");
     }
 
     private void onInit() {
@@ -48,8 +59,11 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* Exemple d'envoi de données sur une autre page
                 Intent intent = new Intent(MainActivity.this, AddArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
                 startActivity(intent);
+                 */
             }
         });
 
