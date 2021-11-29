@@ -3,10 +3,14 @@ package me.khalil.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // désac le night mode dégeulasse
 
         this.onInit();
         this.onLoad();
@@ -38,6 +43,44 @@ public class MainActivity extends AppCompatActivity {
             return;
 
         articles = getIntent().getParcelableArrayListExtra("articles");
+
+        for (Article a : articles) {
+            System.out.println(a.toString());
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()) {
+            case (R.id.menu_ajout_article):
+                intent = new Intent(MainActivity.this, AddArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
+                startActivity(intent);
+                break;
+            case (R.id.menu_liste_article):
+                intent = new Intent(MainActivity.this, ListArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
+                startActivity(intent);
+                break;
+            case (R.id.menu_modif_article):
+                intent = new Intent(MainActivity.this, EditArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
+                startActivity(intent);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void onInit() {
@@ -59,11 +102,10 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Exemple d'envoi de données sur une autre page
                 Intent intent = new Intent(MainActivity.this, AddArticle.class);
                 intent.putParcelableArrayListExtra("articles", articles);
                 startActivity(intent);
-                 */
+
             }
         });
 
@@ -71,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
                 startActivity(intent);
             }
         });
@@ -79,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, EditArticle.class);
+                intent.putParcelableArrayListExtra("articles", articles);
                 startActivity(intent);
             }
         });

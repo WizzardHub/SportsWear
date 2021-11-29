@@ -13,6 +13,11 @@
     <!-- list article -->
     <string name="message_liste">Liste des articles</string>
 
+    <!-- menu -->
+    <string name="menu_ajout_article">Ajouter Article</string>
+    <string name="menu_liste_article">Liste Article</string>
+    <string name="menu_modif_article">Modifier Article</string>
+
     <!-- base -->
     <string name="app_name">SportsWearApp</string>
     <string name="label_nom_article">Nom : </string>

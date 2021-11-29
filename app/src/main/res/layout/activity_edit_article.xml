@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="@string/label_nom_article"
+        android:textColor="@color/gray"
         app:layout_constraintEnd_toStartOf="@+id/editTextNomModif"
         app:layout_constraintTop_toTopOf="@+id/editTextNomModif" />
 
@@ -23,6 +24,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="@string/label_description_article"
+        android:textColor="@color/gray"
         app:layout_constraintEnd_toStartOf="@+id/editTextDescModif"
         app:layout_constraintTop_toTopOf="@+id/editTextDescModif" />
 
@@ -48,6 +50,8 @@
         android:hint="@string/text_nom_article"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMessageModifArticle" />
@@ -61,6 +65,8 @@
         android:hint="@string/text_prix_article"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/editTextDescModif"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescModif" />
 
@@ -73,6 +79,8 @@
         android:hint="@string/text_description_article"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/editTextNomModif"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomModif" />
 
@@ -83,6 +91,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="@string/label_prix_article"
+        android:textColor="@color/gray"
         app:layout_constraintEnd_toStartOf="@+id/editTextPrixModif"
         app:layout_constraintTop_toTopOf="@+id/editTextPrixModif" />
 
@@ -121,6 +130,8 @@
         android:hint="@string/text_qte_article"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/editTextPrixModif"
         app:layout_constraintTop_toBottomOf="@+id/editTextPrixModif" />
 
@@ -131,6 +142,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="@string/label_qte_article"
+        android:textColor="@color/gray"
         app:layout_constraintEnd_toStartOf="@+id/editTextQteModif"
         app:layout_constraintTop_toTopOf="@+id/editTextQteModif" />
 </androidx.constraintlayout.widget.ConstraintLayout>

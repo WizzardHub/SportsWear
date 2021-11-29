@@ -1,28 +1,27 @@
 package me.wizzard.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import me.khalil.app.MainActivity;
 import me.wizzard.module.Article;
+import me.wizzard.util.ParseUtil;
 
 public class AddArticle extends AppCompatActivity {
 
     Button btnAdd, btnBack;
     EditText editName, editDesc, editPrice, editQte;
 
-    ArrayList
-            <Article> articles;
+    ArrayList<Article> articles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +32,30 @@ public class AddArticle extends AppCompatActivity {
         this.onLoad();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        /*
+         * Articles
+         */
+        if (getIntent().getExtras() == null)
+            return;
+
+        articles = getIntent().getParcelableArrayListExtra("articles");
+
+        for (Article a : articles) {
+            System.out.println(a.toString());
+        }
+    }
+
     private void onInit() {
 
         /*
          * Buttons
          */
         btnAdd = findViewById(R.id.buttonAjouter);
-        btnBack = findViewById(R.id.buttonRetourArticle);
+        btnBack = findViewById(R.id.buttonRetourAjout);
 
         /*
          * EditText
@@ -48,12 +64,6 @@ public class AddArticle extends AppCompatActivity {
         editDesc = findViewById(R.id.editTextDescAjout);
         editPrice = findViewById(R.id.editTextPrixAjout);
         editQte = findViewById(R.id.editTextQteAjout);
-
-        /*
-         * Articles
-         */
-        articles = getIntent().getParcelableArrayListExtra("articles");
-        System.out.println(articles.toString());
     }
 
     private void onLoad() {
@@ -67,26 +77,19 @@ public class AddArticle extends AppCompatActivity {
 
     private void handleAddArticle(View view) {
 
-        double price;
-        int qte;
+        String name = editName.getText().toString(),
+                desc = editDesc.getText().toString();
 
-        try {
-            price = Double.parseDouble(editPrice.getText().toString());
-        } catch (Exception e) {
-            Toast.makeText(this, "Le prix n'est pas valide.", Toast.LENGTH_LONG)
+        double price = ParseUtil.parseDouble(editPrice.getText().toString());
+        int qte = ParseUtil.parseInt(editQte.getText().toString());
+
+        if (price < 0 || qte < 0) {
+            Toast.makeText(this, "Erreur : Une valeur est incorrecte !", Toast.LENGTH_LONG)
                     .show();
             return;
         }
 
-        try {
-            qte = Integer.parseInt(editQte.getText().toString());
-        } catch (Exception e) {
-            Toast.makeText(this, "La qté n'est pas valide.", Toast.LENGTH_LONG)
-                    .show();
-            return;
-        }
-
-        articles.add(new Article(editName.getText().toString(), editDesc.getText().toString(), price, qte));
+        articles.add(new Article(name, desc, price, qte));
         Toast.makeText(this, String.format("Article %s à été ajouté !", editName.getText().toString()), Toast.LENGTH_LONG)
                 .show();
     }
@@ -96,5 +99,4 @@ public class AddArticle extends AppCompatActivity {
         intent.putParcelableArrayListExtra("articles", articles);
         startActivity(intent);
     }
-
 }
